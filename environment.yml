@@ -1,0 +1,14 @@
+name: allorank
+channels:
+  - conda-forge
+dependencies:
+  - python=3.7
+  - pandas
+  - numpy
+  - scikit-learn
+  - lightgbm
+  - fpocket
+  - pip
+  - pip:
+    - xlrd
+    - tqdm
