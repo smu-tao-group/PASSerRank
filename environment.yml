@@ -12,3 +12,6 @@ dependencies:
   - pip:
     - xlrd
     - tqdm
+    - requests
+    - biopython
+    - matplotlib
