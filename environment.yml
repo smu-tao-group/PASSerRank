@@ -1,4 +1,4 @@
-name: allorank
+name: passerrank
 channels:
   - conda-forge
 dependencies:
