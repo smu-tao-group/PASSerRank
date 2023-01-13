@@ -5,7 +5,6 @@ import glob, os, pickle, math
 from tqdm import tqdm
 import numpy as np
 from utils.pocket_feature import pocket_feature
-from utils.count_atoms import count_atoms
 
 
 pdb_diverse = pickle.load(open("../data/clean_data/pdb_diverse.pkl", "rb"))
@@ -41,13 +40,12 @@ for pdb, info in tqdm(pdb_diverse.items()):
     pocket_names = glob.glob(pocket_dir + "*.pdb")
     pocket_names = sorted(
         pocket_names,
-        key = lambda x : int(x.split("pocket")[-1].split("_")[0])
+        key=lambda x: int(x.split("pocket")[-1].split("_")[0])
     )
 
     # find the nearest pocket
     dists = []
-    counts = []
-    
+
     # collect pocket features and labels
     cur_features = pocket_feature(f"../data/pockets/{pdb}_out/{pdb}_info.txt")
     selected_idxs = []
@@ -76,7 +74,6 @@ for pdb, info in tqdm(pdb_diverse.items()):
         )
 
         dists.append(dist)
-        counts.append(count_atoms(pocket_name, residues))
         selected_idxs.append(idx)
 
     # drop if there are less than 2 pockets found

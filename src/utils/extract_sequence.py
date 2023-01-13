@@ -34,6 +34,8 @@ def extract_sequence(pdb_path, chain):
         if line[:6] == "SEQRES" and line[11] == chain:
             residues = line[19:].strip().split(" ")
             res_one_letter = [*map(THREE_ONE_DIGIT.get, residues)]
-            res_one_letter = [char if char is not None else "-" for char in res_one_letter ]
+            res_one_letter = [
+                char if char is not None else "-" for char in res_one_letter
+            ]
             res_one_letters += "".join(res_one_letter)
     return res_one_letters

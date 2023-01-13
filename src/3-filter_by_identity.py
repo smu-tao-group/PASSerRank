@@ -15,7 +15,7 @@ for pdb in pdb_distance.keys():
         [pdb, pdb_distance[pdb]["distance"], pdb_distance[pdb]["sequence"]]
     )
 
-pdb_seq_dist.sort(key = lambda x : x[1])
+pdb_seq_dist.sort(key=lambda x: x[1])
 
 sequences = [pdb_seq_dist[0][2]]
 selected_pdbs = [pdb_seq_dist[0][0]]

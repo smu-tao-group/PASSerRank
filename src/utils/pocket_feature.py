@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-def pocket_feature(file_dir: str)-> list:
+def pocket_feature(file_dir):
     pocket = open(file_dir + "", "r").readlines()
     pocket_num = len(pocket) // 21
 

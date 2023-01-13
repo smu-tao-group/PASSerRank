@@ -35,7 +35,9 @@ for line in tqdm(asd[1:]):
         res.replace(":", ",").split(",") for res in line[-1].split("; ")
     ]
     # residue_clean format: chain id + residue type + residue number
-    residues = [[res[0][-1], ch[:3], ch[3:]] for res in res_raw for ch in res[1:]]
+    residues = [
+        [res[0][-1], ch[:3], ch[3:]] for res in res_raw for ch in res[1:]
+    ]
     # select only residues in the same chain of modulator
     residues = [res for res in residues if res[0] == chain]
 

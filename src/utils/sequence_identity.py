@@ -27,4 +27,4 @@ def sequence_identity(seq1, seq2):
 
     quality_matches = np.logical_and(pair_matches, seq1_notmissing)
     quality_comparisons = np.logical_and(seq1_notmissing, seq2_notmissing)
-    return  1.0 * quality_matches.sum() / (quality_comparisons.sum())
+    return 1.0 * quality_matches.sum() / (quality_comparisons.sum())

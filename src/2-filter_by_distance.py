@@ -4,7 +4,6 @@
 import math, glob, pickle
 import numpy as np
 from tqdm import tqdm
-from utils.count_atoms import count_atoms
 
 
 DISTANCE_THRESHOLD = 10
@@ -44,12 +43,11 @@ for pdb, info in tqdm(pdb_diverse.items()):
     pocket_names = glob.glob(pocket_dir + "*.pdb")
     pocket_names = sorted(
         pocket_names,
-        key = lambda x : int(x.split("pocket")[-1].split("_")[0])
+        key=lambda x: int(x.split("pocket")[-1].split("_")[0])
     )
 
     # find the nearest pocket
     dists = []
-    counts = []
     for idx, pocket_name in enumerate(pocket_names):
         pocket = open(pocket_name, "r").readlines()
         poc_x, poc_y, poc_z, poc_cnt = 0, 0, 0, 0
@@ -74,7 +72,6 @@ for pdb, info in tqdm(pdb_diverse.items()):
         )
 
         dists.append(dist)
-        counts.append(count_atoms(pocket_name, residues))
 
     # drop if there are less than 2 pockets found (abnormal)
     if len(dists) <= 2:
