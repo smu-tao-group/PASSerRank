@@ -6,3 +6,5 @@
 PASSerRank is a ranking model for allosteric site prediction. 
 
 The scripts under `/src` can be used to prepare the training data. 
+
+Want to use the prepared data and train your own model? [Download it here!](https://drive.google.com/drive/folders/1BB5yIBV6J0CB1dDbvoiHj_0-apPsjvVP?usp=share_link)
